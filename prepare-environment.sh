@@ -23,9 +23,6 @@ git config credential.helper 'cache --timeout 86400'
 echo "Adding git-add-modified alias"
 cat alias-git-add-modified >> ~/.bashrc
 
-echo "Setting GIT credential helper cache timeout to 86400"
-cat git-credential-helper-cache >> ~/.bashrc
-
 echo ">> DONE <<"
 echo ">> Restart your terminal or run 'source ~/.bashrc' <<"
 
