@@ -1,0 +1,2 @@
+alias git-add-modified="git add \$(git st | grep modified | awk '{ print \$2 }')"
+
