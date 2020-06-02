@@ -3,6 +3,12 @@
 echo "Copying binaries to /extbin/bin so we can execute them via scripts"
 cp /usr/bin/git /extbin/bin
 
+echo "Creating local dir: bin/"
+mkdir -p ~/bin
+
+echo "Adding ~/bin to $PATH"
+cat add-local-bin-to-path >> ~/.bashrc
+
 echo "Installing bash-git-prompt..."
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
@@ -22,6 +28,10 @@ git config credential.helper 'cache --timeout 86400'
 
 echo "Adding git-add-modified alias"
 cat alias-git-add-modified >> ~/.bashrc
+
+echo "Installing jq..."
+curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o ~/bin/jq
+chmod u+x ~/bin/jq
 
 echo ">> DONE <<"
 echo ">> Restart your terminal or run 'source ~/.bashrc' <<"
